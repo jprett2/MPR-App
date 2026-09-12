@@ -39,7 +39,7 @@ export function LiveScreen({ game }: { game: Game }) {
           ))}
         </div>
         <button className="sm" onClick={nextPeriod} disabled={game.currentPeriod >= 5}>End {periodLabel(game.currentPeriod)} →</button>
-        <div className="seg">
+        <div className="seg possession" title="Possession">
           <button className={ui.possessionTeamId === home.id ? 'active' : ''} onClick={() => setPossession(game.id, home.id)}>🏈 {home.name}</button>
           <button className={ui.possessionTeamId === opp.id ? 'active' : ''} onClick={() => setPossession(game.id, opp.id)}>🏈 {opp.name}</button>
         </div>

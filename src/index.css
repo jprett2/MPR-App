@@ -107,8 +107,20 @@ label.field { display: flex; flex-direction: column; gap: 4px; font-size: 14px; 
 pre.export { white-space: pre-wrap; font-size: 15px; background: var(--panel-2); padding: 12px; border-radius: 10px; }
 
 @media (max-width: 700px) {
-  .grids { grid-template-columns: 1fr; }
+  .grids { grid-template-columns: 1fr; padding: 6px; }
   .grids .team-grid.hidden { display: none; }
+  .live-bar { padding: 6px 8px; gap: 6px; }
+  .live-bar .seg button { min-height: 36px; padding: 4px 9px; font-size: 14px; }
+  .live-bar .sm { min-height: 36px; font-size: 13px; padding: 4px 8px; }
+  .live-bar .counter { font-size: 12px; }
+  .live-bar .counter b { font-size: 15px; }
+  .live-bar .possession button { font-size: 13px; }
+  .topbar { padding: 6px 8px; }
+  .topbar h1 { font-size: 18px; }
+  .nav button { min-height: 34px; padding: 4px 10px; font-size: 13px; }
+  .play-bar { padding: 6px 8px; gap: 6px; }
+  .play-btn { min-height: 60px; font-size: 24px; }
+  .play-bar .seg button { min-height: 38px; padding: 4px 10px; font-size: 13px; }
 }
 @media (min-width: 701px) {
   .team-toggle { display: none; }
