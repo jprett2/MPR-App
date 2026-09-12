@@ -115,7 +115,7 @@ pre.export { white-space: pre-wrap; font-size: 15px; background: var(--panel-2);
   .live-bar .counter { font-size: 12px; }
   .live-bar .counter b { font-size: 15px; }
   .live-bar .possession button { font-size: 13px; }
-  .topbar { padding: 6px 8px; }
+  .topbar { padding: 6px 8px; padding-top: max(6px, env(safe-area-inset-top)); }
   .topbar h1 { font-size: 18px; }
   .nav button { min-height: 34px; padding: 4px 10px; font-size: 13px; }
   .play-bar { padding: 6px 8px; gap: 6px; }

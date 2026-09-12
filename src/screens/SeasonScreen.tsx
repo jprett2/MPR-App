@@ -19,6 +19,7 @@ export function SeasonScreen() {
   const [teamName, setTeamName] = useState('');
   const [jersey, setJersey] = useState('');
   const [pname, setPname] = useState('');
+  const [showNew, setShowNew] = useState(false);
 
   const add = async () => {
     const j = parseInt(jersey, 10);
@@ -71,7 +72,10 @@ export function SeasonScreen() {
           <button className="primary" onClick={() => go('games')}>Games →</button>
         </>
       ) : null}
-      <div className="card" style={{ marginTop: 16 }}>
+      {season && !showNew && (
+        <button className="ghost" style={{ marginTop: 16 }} onClick={() => setShowNew(true)}>New season…</button>
+      )}
+      {(!season || showNew) && <div className="card" style={{ marginTop: 16 }}>
         <h2>{season ? 'New season' : 'Create season'}</h2>
         <div className="stack">
           <label className="field">Season name<input value={name} onChange={(e) => setName(e.target.value)} /></label>
@@ -89,9 +93,9 @@ export function SeasonScreen() {
             </label>
           </div>
           <label className="field">Our team name<input value={teamName} onChange={(e) => setTeamName(e.target.value)} placeholder="e.g. Wildcats" /></label>
-          <button className="primary" disabled={!name || !teamName} onClick={async () => { await createSeason(name, league, division, teamName); go('season'); }}>Create season</button>
+          <button className="primary" disabled={!name || !teamName} onClick={async () => { await createSeason(name, league, division, teamName); setShowNew(false); go('season'); }}>Create season</button>
         </div>
-      </div>
+      </div>}
     </div>
   );
 }
